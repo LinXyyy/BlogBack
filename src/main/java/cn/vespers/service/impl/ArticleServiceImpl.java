@@ -108,4 +108,21 @@ public class ArticleServiceImpl implements ArticleService {
 
         return result;
     }
+
+    @Override
+    public Map<String, Object> delete(String id) {
+        Map<String, Object> result = new HashMap<>();
+
+        if (1 == articleMapper.delete(id)) {
+            result.put("code", 0);
+            result.put("message", "success");
+            result.put("data", null);
+        } else {
+            result.put("code", 1);
+            result.put("message", "failed");
+            result.put("data", null);
+        }
+
+        return result;
+    }
 }

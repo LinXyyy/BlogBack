@@ -50,5 +50,12 @@ public interface ArticleMapper {
      * @return 是否成功
      */
     int add(Map<String, String> params);
+
+    /**
+     * 删除文章
+     * @param id 文章的主键
+     * @return 删除结果
+     */
+    int delete(@Param("id") String id);
 }
 

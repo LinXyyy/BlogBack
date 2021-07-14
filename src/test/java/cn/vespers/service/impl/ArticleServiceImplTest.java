@@ -44,4 +44,11 @@ public class ArticleServiceImplTest extends TestCase {
 
         articleService.select("配");
     }
+
+    public void testDelete() {
+        ApplicationContext applicationContext = new ClassPathXmlApplicationContext("applicationContext.xml");
+        ArticleService articleService = applicationContext.getBean("articleServiceImpl", ArticleService.class);
+
+        articleService.delete("2");
+    }
 }

@@ -49,4 +49,11 @@ public interface ArticleService {
      * @return 是否成功
      */
     Map<String, Object> add(String title, String summary, String classify, String text);
+
+    /**
+     * 删除文章
+     * @param id 文章的主键
+     * @return 删除结果
+     */
+    Map<String, Object> delete(String id);
 }

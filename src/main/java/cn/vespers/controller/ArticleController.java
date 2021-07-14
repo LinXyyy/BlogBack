@@ -54,8 +54,8 @@ public class ArticleController {
     }
 
     @ResponseBody
-    @RequestMapping("/login")
-    public int login(String account, String password) {
-        return "curtain".equals(account) && "wangkunxu!?#".equals(password) ? 0 : 1;
+    @RequestMapping("/delete")
+    public Map<String, Object> delete(String id) {
+        return articleService.delete(id);
     }
 }

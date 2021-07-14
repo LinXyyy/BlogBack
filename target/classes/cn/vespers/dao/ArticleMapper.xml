@@ -37,4 +37,9 @@
         insert into articles(title, summary, classification, text)
         values (#{ title }, #{ summary }, #{ classification }, #{ text })
     </insert>
+
+    <delete id="delete">
+        delete from articles
+        where id = #{ id }
+    </delete>
 </mapper>
