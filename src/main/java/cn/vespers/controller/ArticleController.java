@@ -58,4 +58,10 @@ public class ArticleController {
     public Map<String, Object> delete(String id) {
         return articleService.delete(id);
     }
+
+    @ResponseBody
+    @RequestMapping("/updateArticle")
+    public Map<String, Object> updateArticle(String title, String summary, String classification, String text, String id) {
+        return articleService.updateArticle(title, summary, classification, text, id);
+    }
 }

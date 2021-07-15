@@ -56,4 +56,16 @@ public interface ArticleService {
      * @return 删除结果
      */
     Map<String, Object> delete(String id);
+
+    /**
+     * 修改文章内容
+     *
+     * @param id 文章主键
+     * @param title 标题
+     * @param summary 简介
+     * @param classification 所属分类
+     * @param text 内容
+     * @return 结果
+     */
+    Map<String, Object> updateArticle(String title, String summary, String classification, String text, String id);
 }

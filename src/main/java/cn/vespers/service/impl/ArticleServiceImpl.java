@@ -125,4 +125,28 @@ public class ArticleServiceImpl implements ArticleService {
 
         return result;
     }
+
+    @Override
+    public Map<String, Object> updateArticle(String title, String summary, String classification, String text, String id) {
+        Map<String, String> params = new HashMap<>();
+        params.put("title", title);
+        params.put("summary", summary);
+        params.put("classification", classification);
+        params.put("text", text);
+        params.put("id", id);
+
+        Map<String, Object> result = new HashMap<>();
+        int res = articleMapper.updateArticle(params);
+        if (res == 1) {
+            result.put("code", 0);
+            result.put("message", "success");
+            result.put("data", null);
+        }
+        else {
+            result.put("code", 1);
+            result.put("message", "failed");
+            result.put("data", null);
+        }
+        return result;
+    }
 }

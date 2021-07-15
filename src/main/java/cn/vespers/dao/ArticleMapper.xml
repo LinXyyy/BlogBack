@@ -42,4 +42,23 @@
         delete from articles
         where id = #{ id }
     </delete>
+
+    <update id="updateArticle">
+        update articles
+        <set>
+            <if test="title != null">
+                title = #{ title },
+            </if>
+            <if test="summary != null">
+                summary = #{ summary },
+            </if>
+            <if test="classification != null">
+                classification = #{ classification },
+            </if>
+            <if test="text != null">
+                text = #{ text }
+            </if>
+        </set>
+        where id = #{ id }
+    </update>
 </mapper>
